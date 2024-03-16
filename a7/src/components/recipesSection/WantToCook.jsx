@@ -1,12 +1,12 @@
 import React from 'react'
 
-function WantToCook({ card }) {
-    console.log(card);
+function WantToCook({ card,handlePreparingClick,removeCardHandle }) {
+    // console.log(card);
     return (
-        <div className='text-black'>
+        <div className='text-black border-b mb-3'>
             <h1 className='font-bold text-center text-xl'>Want To cook : {card.length}</h1>
 
-            <div className='flex gap-6 items-center'>
+            <div className='flex  md:gap-6 gap-2 items-center'>
                 <div className='flex  flex-col'>
                     <div className="name">
                         <h1 className='font-bold'>Name</h1>
@@ -21,7 +21,7 @@ function WantToCook({ card }) {
                     <h1 className='font-bold'>Time</h1>
                     <ul>
                         {card?.map((item, index) => (
-                            <li className='font-semibold whitespace-nowrap py-2 ' key={index + 1}> {item.preparing_time}</li>
+                            <li className='font-semibold whitespace-nowrap py-2 ' key={index + 1}> {item.preparing_time} min</li>
                         ))}
                     </ul>
                 </div>
@@ -39,7 +39,10 @@ function WantToCook({ card }) {
                     <button
                         key={index + 1}
                         className='bg-[#0BE58A] h-fit px-2 py-[6px] rounded-xl'
-                        onClick={() => handlePreparingClick(item.recipe_id)}
+                        onClick={() => (
+                            handlePreparingClick(item),
+                            removeCardHandle(item)
+                        )}
                     >
                         Preparing
                     </button>

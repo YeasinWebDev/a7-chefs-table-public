@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import WantToCook from './WantToCook'
+import Preparing from './Preparing'
+function SideBar({card, removeCardHandle,removeCard}) {
+  const [currentcard, setCurrentCard] = useState([])
 
-function SideBar({card}) {
+  const handlePreparingClick = (card) =>{
+    console.log(card);
+  }
   return (
     <div>
-      <WantToCook card={card}/>
+      <WantToCook card={card} handlePreparingClick={handlePreparingClick} removeCardHandle={removeCardHandle}/>
+      <Preparing removeCard={removeCard}/>
     </div>
   )
 }

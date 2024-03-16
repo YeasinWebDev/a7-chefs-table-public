@@ -1,7 +1,6 @@
 import React from 'react'
 
 function EachCard({ card, handdleCard }) {
-  console.log(card);
   return (
     <div>
       <div class="card w-96  shadow-xl h-[40rem] ">
