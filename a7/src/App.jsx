@@ -15,6 +15,8 @@ function App() {
   const [removeCard, setRemoveCard] = useState([])
 
   const removeCardHandle = (eachItem) =>{
+    const alreadyHave = removeCard.find(c=> c.recipe_id === eachItem.recipe_id)
+    if(alreadyHave) return toast("Already Exists") 
     setRemoveCard([...removeCard,eachItem])
     const updatedCard = card.filter(p => p.recipe_id !== eachItem.recipe_id);
     setCard(updatedCard);

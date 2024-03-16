@@ -1,4 +1,6 @@
 import React from 'react'
+import { FaRegClock } from "react-icons/fa6";
+import { FaFire } from "react-icons/fa";
 
 function EachCard({ card, handdleCard }) {
   return (
@@ -24,6 +26,16 @@ function EachCard({ card, handdleCard }) {
               <li className='font-semibold' key={index + 1}>{index + 1}. {item}</li>
             ))}
           </ul>
+        </div>
+        <div className='flex ml-8 gap-5'>
+              <div className='flex items-center gap-2'>
+                <FaRegClock/>
+                <h1>{card.preparing_time} min</h1>
+              </div>
+              <div className='flex items-center gap-2'>
+                <FaFire/>
+                <h1>{card.calories} cal</h1>
+              </div>
         </div>
         <div class="card-actions p-5">
             <button class="p-2 bg-[#0BE58A]  rounded-3xl font-semibold"

@@ -8,7 +8,7 @@ function SideBar({card, removeCardHandle,removeCard}) {
     console.log(card);
   }
   return (
-    <div>
+    <div className='border-2 border-gray-200 px-3 py-2 md:w-[30rem] h-fit'>
       <WantToCook card={card} handlePreparingClick={handlePreparingClick} removeCardHandle={removeCardHandle}/>
       <Preparing removeCard={removeCard}/>
     </div>
