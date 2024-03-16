@@ -1,6 +1,6 @@
 import React from 'react'
 
-function EachCard({ card }) {
+function EachCard({ card, handdleCard }) {
   console.log(card);
   return (
     <div>
@@ -27,8 +27,10 @@ function EachCard({ card }) {
           </ul>
         </div>
         <div class="card-actions p-5">
-            <button class="p-2 bg-[#0BE58A]  rounded-3xl font-semibold">Want to Cook</button>
-          </div>
+            <button class="p-2 bg-[#0BE58A]  rounded-3xl font-semibold"
+            onClick={() => handdleCard(card)}
+            >Want to Cook</button>
+        </div>
         
       </div>
     </div>

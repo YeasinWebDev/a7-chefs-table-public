@@ -1,10 +1,10 @@
 import React from 'react'
 import WantToCook from './WantToCook'
 
-function SideBar() {
+function SideBar({card}) {
   return (
     <div>
-      <WantToCook/>
+      <WantToCook card={card}/>
     </div>
   )
 }
