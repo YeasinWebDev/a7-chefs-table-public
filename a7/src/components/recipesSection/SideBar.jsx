@@ -1,8 +1,11 @@
 import React from 'react'
+import WantToCook from './WantToCook'
 
 function SideBar() {
   return (
-    <div>SideBar</div>
+    <div>
+      <WantToCook/>
+    </div>
   )
 }
 
